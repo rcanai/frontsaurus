@@ -1,4 +1,8 @@
+require('dotenv').config()
 const pkg = require('./package')
+const constants = require('./assets/js/constants')
+const postFeed = require('./assets/js/postFeed')
+const postRoutes = require('./assets/js/postRoutes')
 
 module.exports = {
   mode: 'universal',
@@ -6,32 +10,53 @@ module.exports = {
   /*
   ** Headers of the page
   */
- head: {
-  htmlAttrs: {
-    lang: 'ja'
+  head: {
+    htmlAttrs: {
+      lang: 'ja'
+    },
+    title: constants.title,
+    meta: [
+      // 文字コード
+      { charset: 'utf-8' },
+      // ビューポート
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // 説明
+      { hid: 'description', name: 'description', content: pkg.description },
+      // 作者
+      { name: 'author', content: 'rcanai' },
+      // IE制御
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+      // 電話番号リンクを抑制
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      // ファビコン
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // スマホアイコン
+      { rel: 'apple-touch-icon', href: '/favicon.ico' }
+    ]
   },
-  title: ':title',
-  meta: [
-    // 文字コード
-    { charset: 'utf-8' },
-    // ビューポート
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    // 説明
-    { hid: 'description', name: 'description', content: pkg.description },
-    // 作者
-    { name: 'author', content: 'rcanai' },
-    // IE制御
-    { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-    // 電話番号リンクを抑制
-    { name: 'format-detection', content: 'telephone=no' }
+
+  /*
+   ** ローディングを独自コンポーネントに置き換える
+   */
+  loading: '@/components/Nuxt/TheLoading.vue',
+
+  /*
+   ** Global CSS
+   */
+  css: [
+    // トランジション
+    '@/assets/css/transition.css'
   ],
-  link: [
-    // ファビコン
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    // スマホアイコン
-    { rel: 'apple-touch-icon', href: '/favicon.ico' }
-  ]
-},
+
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [
+    { src: '@/plugins/contentfulClient.js', ssr: true },
+    { src: '@/plugins/ga.js', ssr: false }
+  ],
 
   /*
   ** Customize the progress-bar color
@@ -54,6 +79,72 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // 変数などの共通リソースを読み込むためのプラグイン
+    // Doc: https://github.com/anteriovieira/nuxt-sass-resources-loader
+    'nuxt-sass-resources-loader',
+
+    // .envを使用する
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
+
+    // サイトマップを作成する
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap',
+
+    // マークダウンを使用する
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
+    '@nuxtjs/markdownit',
+
+    // momentjsを使用する
+    // Doc: https://github.com/nuxt-community/moment-module
+    [
+      '@nuxtjs/moment', {
+        locales: ['ja'],
+        plugin: true
+      }
+    ],
+
+    // RSSフィードを使用する
+    // Doc: https://github.com/nuxt-community/feed-module
+    '@nuxtjs/feed'
+  ],
+
+  // sass共通モジュールの設定
+  sassResources: [
+    // 変数とミックスイン
+    '@/assets/scss/_variables.scss',
+    '@/assets/scss/_mixins.scss'
+  ],
+
+  // マークダウンの設定
+  markdownit: {
+    preset: 'default',
+    injected: true,
+    linkify: true,
+    breaks: true,
+    html: true,
+    typographer: true
+  },
+
+  // サイトマップの設定
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: constants.url,
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: false, // nuxt generate で静的ファイル出力する場合にはtrueにする
+    exclude: [], // 除外項目
+    routes: postRoutes
+  },
+
+  // RSSフィードの設定
+  feed: [
+    {
+      path: '/feed.xml',
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      create: postFeed
+    }
   ],
 
   /*

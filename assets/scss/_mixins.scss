@@ -1,0 +1,127 @@
+@mixin tap-highligh-none() {
+  -webkit-tap-highlight-color: transparent; // タップ時のハイライト無効
+}
+
+@mixin button() {
+  display: inline-block;
+  padding: .25rem .5rem;
+  background-color: $color-main;
+  color: $color-light;
+  border-radius: .5rem;
+  border: 1px solid $color-main;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  @include tap-highligh-none();
+  transition: background-color .3s linear, border-color .3s linear;
+  &:hover {
+    background-color: darken($color-main, 10%);
+    border-color: darken($color-main, 10%);
+  }
+}
+
+@mixin button-light() {
+  display: inline-block;
+  text-align: center;
+  padding: .25em .5em;
+  background: linear-gradient(-45deg, rgba($color-light, 0), rgba($color-light, .3));
+  border: 1px solid rgba($color-light, .3);
+  border-radius: .5rem;
+  color: $color-light;
+  box-shadow: 0 0 1rem rgba($color-light, .3);
+  @include tap-highligh-none();
+  transition: all .5s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 7rem rgba($color-light, .7);
+  }
+}
+
+@mixin article-typography() {
+  h1, h2 {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba($color-dark, .5);
+  }
+  h3 {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  }
+  h4 {
+    font-weight: bold;
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+  }
+  p {
+    padding: .25rem;
+    line-height: 1.5em;
+  }
+  a {
+    text-decoration: underline;
+  }
+  ul {
+    list-style: circle;
+  }
+  ol {
+    list-style: disc;
+  }
+  ul, ol {
+    padding-left: 1.5rem;
+    line-height: 1em;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  p {
+    code {
+      font-family: $font-family;
+      background-color: rgba($color-dark, .1);
+      padding: 0 .25rem;
+      border-radius: .25rem;
+    }
+  }
+  pre {
+    code {
+      font-family: $font-family-code;
+      margin-top: .5rem;
+      margin-bottom: 1rem;
+      padding: .25rem;
+      border-radius: .25rem;
+    }
+  }
+  table {
+    background-color: rgba($color-gray, .5);
+    border-collapse: separate;
+    border-spacing: 1px;
+    width: 100%;
+    border-radius: .25rem;
+    th {
+      background-color: $color-dark;
+      color: $color-light;
+      font-weight: bold;
+      padding: .5rem;
+    }
+    td {
+      background-color: $color-light;
+      padding: .5rem;
+    }
+  }
+}
+
+@mixin background-gradient($keyframe) {
+  background: linear-gradient(
+    -45deg,
+    lighten($color-main, 30%),
+    lighten($color-main, 15%),
+    lighten($color-accent, 30%),
+    lighten($color-accent, 15%)
+  );
+  background-size: 400% 400%;
+  animation: $keyframe 6s ease;
+  background-attachment: fixed;
+  animation-fill-mode: forwards;
+}

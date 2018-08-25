@@ -1,0 +1,16 @@
+/* .page-enter-active {
+  transition: opacity 0.4s linear;
+}
+
+.page-leave-active {
+  transition: opacity 0.2s linear;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+#header {
+  opacity: 1 !important;
+} */

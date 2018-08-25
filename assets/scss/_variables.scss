@@ -1,0 +1,22 @@
+// 白・黒・グレー
+$color-light: #fefefe;
+$color-white: #ffffff;
+$color-dark: #333333;
+$color-black: #000000;
+$color-gray: mix($color-light, $color-dark);
+
+// 基本色
+$color-main: #4CAF50;
+$color-sub: #66BB6A;
+$color-accent: #FFC107;
+
+// 文字色
+$color-link: $color-main;
+
+// レスポンシブ
+$width-small: 750px; // スマホ境界線
+$width-large: 1280px; // PCなど
+
+// フォントファミリー
+$font-family: -apple-system, BlinkMacSystemFont, Verdana, Roboto, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+$font-family-code: "Monaco", "Consolas", "Courier New", Courier, monospace;
