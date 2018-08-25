@@ -47,7 +47,11 @@ module.exports = {
    */
   css: [
     // トランジション
-    '@/assets/css/transition.css'
+    '@/assets/css/transition.css',
+    // リセット
+    '@/assets/css/reset.css',
+    // メイン (SCSS)
+    '@/assets/scss/main.scss'
   ],
 
   /*
@@ -56,23 +60,6 @@ module.exports = {
   plugins: [
     { src: '@/plugins/contentfulClient.js', ssr: true },
     { src: '@/plugins/ga.js', ssr: false }
-  ],
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#FFFFFF' },
-
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
   ],
 
   /*
@@ -112,8 +99,8 @@ module.exports = {
   // sass共通モジュールの設定
   sassResources: [
     // 変数とミックスイン
-    '@/assets/scss/_variables.scss',
-    '@/assets/scss/_mixins.scss'
+    '@/assets/scss/partials/_variables.scss',
+    '@/assets/scss/partials/_mixins.scss'
   ],
 
   // マークダウンの設定
@@ -186,7 +173,16 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+
+    // ベンダープレフィックス自動付与設定
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['IE 11', 'last 2 versions' ],
+        grid: true,
+        cascade: false
+      })
+    ]
   },
 
   /*

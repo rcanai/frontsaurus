@@ -1,14 +1,15 @@
 <template>
-  <div class="container">
+  <div class="main-container">
     home
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'default'
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

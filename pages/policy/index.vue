@@ -1,7 +1,7 @@
 <template>
   <div
     id="page-policy"
-    class="page-container">
+    class="main-container">
     <section>
       <header class="page-header">
         <h1 class="page-title">プライバシーポリシー</h1>
@@ -19,11 +19,11 @@
         <h2>引用について</h2>
         <p>
           当サイトは、以下の条件のもと、引用を承諾します。
-          <ol>
-            <li>引用の際は必ず出典元としてサイト名より当サイトへリンクしていただくこと</li>
-            <li>引用部分を「blockquoteタグ（引用タグ）」で挟むこと</li>
-          </ol>
         </p>
+        <ol>
+          <li>引用の際は必ず出典元としてサイト名より当サイトへリンクしていただくこと</li>
+          <li>引用部分を「blockquoteタグ（引用タグ）」で挟むこと</li>
+        </ol>
         <h2>当サイトに掲載されている広告について</h2>
         <p>
           当サイトでは、第三者配信の広告サービス（Googleアドセンス）を利用しています。<br>
@@ -72,8 +72,7 @@ export default {
     padding: 1rem;
   }
   ol {
-    padding-left: 1.5rem;
-    margin-top: 1rem;
+    padding-left: 2.5rem;
   }
 }
 </style>

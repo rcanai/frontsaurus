@@ -1,0 +1,37 @@
+// ベース
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: $color-dark;
+  background-color: $color-light;
+}
+
+// タイポグラフィー
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+a {
+  // color: $color-dark;
+}
+
+// 選択
+*::selection {
+  background: rgba($color-main, .3);
+}
+*::-moz-selection {
+  background: rgba($color-main, .3);
+}

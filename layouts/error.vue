@@ -10,15 +10,6 @@
           <span>{{ message }}</span>
         </h1>
       </header>
-      <div class="escape-links">
-        <nuxt-link to="/">
-          Home
-        </nuxt-link>
-        <div class="spacer" />
-        <nuxt-link to="/posts">
-          Blog
-        </nuxt-link>
-      </div>
     </section>
   </div>
 </template>
@@ -55,28 +46,6 @@ export default {
   .page-title {
     margin-top: 5rem;
     color: $color-accent;
-  }
-  .escape-links {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3rem;
-    a {
-      font-size: 2rem;
-      border: 1px solid $color-main;
-      border-radius: .5rem;
-      padding: .25rem 1rem;
-      transition: all .3s linear;
-      &:hover {
-        background-color: rgba($color-main, .7);
-        border-color: rgba($color-main, .7);
-        color: $color-light;
-      }
-    }
-    .spacer {
-      width: 3rem;
-    }
   }
 }
 </style>

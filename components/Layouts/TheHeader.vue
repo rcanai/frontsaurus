@@ -109,11 +109,6 @@ export default {
     background-size: 1rem 2rem;
     background-image: radial-gradient(circle at .5rem -1rem, transparent 1rem, $color-light 1.6rem);
   }
-  &::after{
-    height: 1.25rem;
-    background-size: 2rem 2rem;
-    background-image: radial-gradient(circle at .5rem 2rem, $color-light 1rem, transparent 1.6rem);
-  }
 
   .header-container {
     width: 100%;
@@ -168,6 +163,7 @@ export default {
     height: 0;
     opacity: 0;
     ul {
+      list-style: none;
       display: flex;
       flex-flow: row wrap;
       align-items: center;

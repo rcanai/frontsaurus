@@ -1,6 +1,6 @@
-/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
+div,
 p,
 ol,
 ul,
@@ -36,19 +36,19 @@ h6 {
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
-}
-
 button,
 input,
 select,
-textarea {
+textarea,
+button {
   margin: 0;
+  outline: 0;
+  font-size: 100%;
 }
 
 html {
   box-sizing: border-box;
+  line-height: 1;
 }
 
 *, *:before, *:after {
@@ -58,7 +58,6 @@ html {
 img,
 embed,
 iframe,
-object,
 audio,
 video {
   height: auto;
@@ -69,13 +68,24 @@ iframe {
   border: 0;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 td,
 th {
   padding: 0;
   text-align: left;
+}
+
+header,
+footer,
+main {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
 }
