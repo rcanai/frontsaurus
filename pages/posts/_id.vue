@@ -1,7 +1,7 @@
 <template>
   <div
     id="pages-posts-id"
-    class="page-container">
+    class="main-container">
     <article>
       <header class="post-header">
         <time
@@ -65,14 +65,14 @@ export default {
     }
   },
   // サーバーサイドレンダリング(Promiseを使うパターン)
-  async asyncData ({ params, error }) {
+  asyncData ({ params, error }) {
     // 本来ならばgetEntryを使用したいが、
     // カテゴリーをJOINできないため、複数取得する
     const fetchQuery = {
       content_type: 'post',
       'sys.id': params.id
     }
-    await contentfulClient.getEntries(fetchQuery).then((res) => {
+    return contentfulClient.getEntries(fetchQuery).then((res) => {
       if (res.items.length === 0) {
         return error({
           statusCode: 404,
@@ -106,7 +106,7 @@ export default {
   // head要素
   head () {
     return {
-      title: `${this.post.fields.title} - ${constants.title}`,
+      title: `${this.post.fields.title} | ${constants.title}`,
       meta: [
         // SNS Card
         { name: 'twitter:card', content: 'summary' },

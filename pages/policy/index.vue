@@ -56,7 +56,7 @@ export default {
   layout: 'default',
   head () {
     return {
-      title: `プライバシーポリシー - ${constants.title}`
+      title: `プライバシーポリシー | ${constants.title}`
     }
   }
 }

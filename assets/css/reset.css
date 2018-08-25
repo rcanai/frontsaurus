@@ -48,7 +48,6 @@ button {
 
 html {
   box-sizing: border-box;
-  line-height: 1;
 }
 
 *, *:before, *:after {
@@ -72,6 +71,10 @@ td,
 th {
   padding: 0;
   text-align: left;
+}
+ul,
+ol {
+  list-style: none;
 }
 
 header,

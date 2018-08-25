@@ -1,19 +1,36 @@
+// タップ時のハイライト無効
 @mixin tap-highligh-none() {
-  -webkit-tap-highlight-color: transparent; // タップ時のハイライト無効
+  -webkit-tap-highlight-color: transparent;
+}
+
+// 入力エリア（textareaにも使える）
+@mixin input() {
+  display: inline-block;
+  width: auto;
+  background-color: $color-white;
+  border: 1px solid $color-main;
+  border-radius: .25rem;
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  &:focus {
+    box-shadow: 0 0 0 .1rem rgba($color-main, .3);
+  }
 }
 
 @mixin button() {
   display: inline-block;
-  padding: .25rem .5rem;
+  width: auto;
   background-color: $color-main;
-  color: $color-light;
   border: 1px solid $color-main;
   border-radius: .25rem;
-  margin-top: 1rem;
+  padding: .25rem .5rem;
+  color: $color-light;
   text-align: center;
   font-size: 1rem;
+  line-height: 1.5;
   @include tap-highligh-none();
-  transition: background-color .3s linear, border-color .3s linear;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
   &:hover {
     background-color: darken($color-main, 10%);
     border-color: darken($color-main, 10%);
@@ -36,6 +53,7 @@
   }
 }
 
+// 記事内容のスタイル
 @mixin article-typography() {
   h1, h2 {
     font-weight: bold;

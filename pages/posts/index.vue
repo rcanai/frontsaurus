@@ -1,21 +1,11 @@
 <template>
   <div
     id="pages-posts"
-    class="page-container">
+    class="main-container">
     <section >
       <header class="page-header">
-        <h1 class="page-title">Blog</h1>
+        <h1 class="page-title">記事一覧</h1>
       </header>
-      <p class="category-list-header">[ カテゴリー ]</p>
-      <ul class="category-list">
-        <nuxt-link
-          tag="li"
-          v-for="category in categories"
-          :key="category.sys.id"
-          :to="`?category=${category.sys.id}`">
-          <a>{{ category.fields.name }}</a>
-        </nuxt-link>
-      </ul>
       <div>
         <ul class="post-list">
           <li
@@ -60,6 +50,14 @@
             </nuxt-link>
           </li>
         </ul>
+      </div>
+      <div class="posts-pagination">
+        <Pagination
+          to="posts"
+          :page="page"
+          :total="postsTotal"
+          :count="onePagePosts"
+          :max="3" />
       </div>
     </section>
   </div>
@@ -144,15 +142,6 @@ export default {
       })
     }
   },
-  mounted () {
-    contentfulClient.getEntries({
-      content_type: 'category',
-      order: 'fields.name',
-      limit: 10
-    }).then((res) => {
-      this.categories = res.items
-    })
-  },
   // HEADタグ
   head () {
     const links = []
@@ -163,7 +152,7 @@ export default {
       links.push({ rel: 'next', href: `/posts?page=${this.page + 1}` })
     }
     return {
-      title: `Blog - ${constants.title}`,
+      title: `記事一覧 | ${constants.title}`,
       link: links
     }
   }
@@ -189,7 +178,7 @@ export default {
     border: 1px solid rgba($color-gray, .5);
     border-radius: .25rem;
     padding: .5rem;
-    transition: box-shadow .2s linear;
+    transition: box-shadow .3s ease-in-out;
     box-shadow: 0 0 .5rem rgba($color-gray, .5);
     &:hover {
       box-shadow: 0 0 2rem  rgba($color-gray, .7);
@@ -199,7 +188,6 @@ export default {
     width: 100%;
   }
   .post-title {
-    cursor: pointer;
     word-break: break-all;
     font-size: 1.2rem;
     font-weight: bold;
@@ -213,9 +201,9 @@ export default {
     color: $color-dark;
   }
   .post-image {
-    min-width: 6rem;
-    width: 6rem;
-    height: 6rem;
+    min-width: 8rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: .25rem;
     background-color: transparent;
     background-size:  cover;
@@ -259,10 +247,12 @@ export default {
 @media screen and (min-width: $width-small) {
   #pages-posts {
     .post-list-item {
-      flex-basis: 49%;
-      &:nth-child(even) {
-        margin-left: 2%;
-      }
+      flex-basis: 100%; // 小さくすると2列になる
+    }
+    .post-image {
+      min-width: 7rem;
+      width: 7rem;
+      height: 7rem;
     }
     .post-detail {
       width: calc(100% - 7rem);

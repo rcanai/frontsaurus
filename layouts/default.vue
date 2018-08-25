@@ -2,7 +2,7 @@
   <div id="layout-default">
     <TheHeader />
     <main id="main">
-      <nuxt/>
+      <nuxt />
     </main>
     <TheAside />
     <TheFooter />

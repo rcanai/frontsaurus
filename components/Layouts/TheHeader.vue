@@ -3,9 +3,12 @@
     id="header"
     ref="header">
     <div class="header-container">
-      <div class="site-title">
-        <nuxt-link to="/">{{ headerTitle }}</nuxt-link>
-      </div>
+      <nuxt-link
+        to="/"
+        class="site-title">
+        <span>{{ headerTitle }}</span>
+        <small>Front saurus</small>
+      </nuxt-link>
       <input
         type="checkbox"
         id="nav-toggle"
@@ -20,28 +23,28 @@
         @click="hideNav">
         <ul class="nav-links">
           <nuxt-link
-            to="/"
+            to="/posts"
             tag="li"
             class="nav-link">
-            <a><b>H</b>ome</a>
+            <a>Blog</a>
+          </nuxt-link>
+          <nuxt-link
+            to="/search"
+            tag="li"
+            class="nav-link">
+            <a>Search</a>
           </nuxt-link>
           <nuxt-link
             to="/about"
             tag="li"
             class="nav-link">
-            <a><b>A</b>bout</a>
-          </nuxt-link>
-          <nuxt-link
-            to="/posts"
-            tag="li"
-            class="nav-link">
-            <a><b>B</b>log</a>
+            <a>About</a>
           </nuxt-link>
           <nuxt-link
             to="/contact"
             tag="li"
             class="nav-link">
-            <a><b>C</b>ontact</a>
+            <a>Contact</a>
           </nuxt-link>
         </ul>
       </nav>
@@ -117,18 +120,29 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 1rem;
+    padding: .5rem;
   }
   .site-title {
     position: relative;
     width: auto;
     white-space: nowrap;
-    a {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: $color-light;
+    span {
+      width: 100%;
       font-size: 2rem;
-      color: $color-light;
-      line-height: 3rem;
+    }
+    small {
+      width: 100%;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: auto;
     }
   }
   .nav-toggle-label {
@@ -174,7 +188,6 @@ export default {
       }
       a {
         @include button-light();
-        font-size: 1.5rem;
         width: 100%;
       }
     }
@@ -219,14 +232,13 @@ export default {
         justify-content: flex-end;
         li {
           margin-bottom: 0;
-          margin-left: 1.2rem;
+          margin-left: 1rem;
           &:first-child {
             margin-left: 0;
           }
         }
         a {
           width: 6rem;
-          font-size: 1.2rem;
           &:hover {
             box-shadow: 0 0 3rem rgba($color-light, .7);
           }

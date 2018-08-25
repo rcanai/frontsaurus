@@ -35,7 +35,7 @@ export default {
   },
   head () {
     return {
-      title: `${this.message} - ${constants.title}`
+      title: `${this.message} | ${constants.title}`
     }
   }
 }

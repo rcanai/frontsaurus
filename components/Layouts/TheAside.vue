@@ -1,8 +1,13 @@
 <template>
   <aside id="aside">
     <div class="aside-container">
-      <div>
-        <input type="text" placeholder="検索する">
+      <div class="search-form">
+        <input
+          type="text"
+          placeholder="検索する">
+        <button>
+          検索
+        </button>
       </div>
       <div>
         <ul class="post-list">
@@ -53,7 +58,6 @@
 </template>
 
 <script>
-import constants from '@/assets/js/constants.js'
 import contentfulClient from '@/plugins/contentfulClient.js'
 
 export default {
@@ -65,10 +69,10 @@ export default {
   },
   methods: {
     fetchPosts () {
-      return contentfulClient.getEntries( {
+      return contentfulClient.getEntries({
         content_type: 'post',
         order: '-fields.publishedAt',
-        limit: 5,
+        limit: 5
       })
     },
     fetchCategories () {
@@ -87,7 +91,7 @@ export default {
       this.posts = res[0].items
       this.categories = res[1].items
     })
-  },
+  }
 }
 </script>
 
@@ -96,6 +100,14 @@ export default {
   .aside-container {
     width: 100%;
     height: 100%;
+  }
+  .search-form {
+    input {
+      @include input();
+    }
+    button {
+      @include button();
+    }
   }
 }
 </style>

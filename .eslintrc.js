@@ -5,17 +5,22 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    ecmaVersion: 6
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential',
+    'plugin:vue/strongly-recommended',
+    // https://github.com/standard/eslint-config-standard
+    'standard'
   ],
   // required to lint *.vue files
   plugins: [
     'vue'
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    "no-console": 1,
+  }
 }
