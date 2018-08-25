@@ -6,17 +6,32 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  head: {
-    title: pkg.name,
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+ head: {
+  htmlAttrs: {
+    lang: 'ja'
   },
+  title: ':title',
+  meta: [
+    // 文字コード
+    { charset: 'utf-8' },
+    // ビューポート
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    // 説明
+    { hid: 'description', name: 'description', content: pkg.description },
+    // 作者
+    { name: 'author', content: 'rcanai' },
+    // IE制御
+    { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+    // 電話番号リンクを抑制
+    { name: 'format-detection', content: 'telephone=no' }
+  ],
+  link: [
+    // ファビコン
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    // スマホアイコン
+    { rel: 'apple-touch-icon', href: '/favicon.ico' }
+  ]
+},
 
   /*
   ** Customize the progress-bar color
@@ -45,6 +60,28 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    /**
+     * 共通モジュール
+     */
+    vendor: [
+      'babel-polyfill'
+    ],
+
+    /**
+     * Babelの設定
+     */
+    babel: {
+      presets: [
+        [
+          'vue-app',
+          {
+            targets: { ie: 11 },
+            useBuiltIns: true
+          }
+        ]
+      ]
+    },
+
     /*
     ** You can extend webpack config here
     */
@@ -58,6 +95,15 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+
+  /*
+   ** Vagrantを使用する際のポーリング設定
+   */
+  watchers: {
+    webpack: {
+      poll: 300
     }
   }
 }
