@@ -280,8 +280,8 @@ export default {
         letter-spacing: .25rem;
       }
       ul {
-        right: 0;
-        bottom: 0;
+        right: 10%;
+        bottom: 10%;
       }
     }
     .header-nav {
