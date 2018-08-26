@@ -95,6 +95,7 @@ export default {
   },
   // サーバーサイドレンダリング(Promiseを使うパターン)
   // この中ではthisでmethodsを参照できないため孤立して実装
+  // page: ページ, category: カテゴリーID, q: 検索文字列
   asyncData ({ query }) {
     const _page = Number(query.page) || 1
     const fetchParams = {
@@ -105,6 +106,9 @@ export default {
     }
     if (query.category) {
       fetchParams['fields.categories.sys.id'] = query.category
+    }
+    if (query.q) {
+      fetchParams['query'] = query.q
     }
     return contentfulClient.getEntries(fetchParams).then((res) => {
       return {
@@ -131,6 +135,9 @@ export default {
       }
       if (query.category) {
         fetchParams['fields.categories.sys.id'] = query.category
+      }
+      if (query.q) {
+        fetchParams['query'] = query.q
       }
       // 取得
       return contentfulClient.getEntries(fetchParams).then((res) => {

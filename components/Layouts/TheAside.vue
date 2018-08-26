@@ -4,8 +4,10 @@
       <div class="search-form">
         <input
           type="text"
+          v-model="searchText"
+          @keyup.enter="search"
           placeholder="検索する">
-        <button>
+        <button @click="search">
           検索
         </button>
       </div>
@@ -54,7 +56,8 @@ export default {
   data () {
     return {
       posts: [],
-      categories: []
+      categories: [],
+      searchText: ''
     }
   },
   methods: {
@@ -72,6 +75,14 @@ export default {
         content_type: 'category',
         order: 'fields.name',
         limit: 10
+      })
+    },
+    // 検索
+    search () {
+      if (!this.searchText) return
+      this.$router.push({
+        name: 'posts',
+        query: { q: this.searchText }
       })
     }
   },
