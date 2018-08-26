@@ -90,6 +90,7 @@ export default {
     input,
     textarea {
       @include input();
+      width: 100%;
     }
     button {
       @include button();

@@ -243,7 +243,6 @@ export default {
   }
 }
 
-// PC
 @media screen and (min-width: $width-small) {
   #pages-posts {
     .post-list-item {

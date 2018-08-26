@@ -115,7 +115,6 @@ export default {
 
   .header-container {
     width: 100%;
-    max-width: $width-large;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -137,6 +136,7 @@ export default {
     span {
       width: 100%;
       font-size: 2rem;
+      font-weight: bold;
     }
     small {
       width: 100%;
@@ -212,7 +212,6 @@ export default {
   }
 }
 
-// PC
 @media screen and (min-width: $width-small) {
   #header {
     height: 8rem;
@@ -245,6 +244,12 @@ export default {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: $width-large) {
+  #header {
+    padding: 0 $side-space;
   }
 }
 </style>

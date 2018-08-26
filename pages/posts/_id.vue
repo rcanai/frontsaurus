@@ -128,7 +128,6 @@ export default {
     border: .1rem solid rgba($color-main, .3);
     border-radius: .5rem;
     padding: .5rem;
-    margin-top: 1rem;
     margin-bottom: 1rem;
   }
   .post-title {

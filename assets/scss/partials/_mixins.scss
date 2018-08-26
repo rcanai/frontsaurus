@@ -29,6 +29,7 @@
   text-align: center;
   font-size: 1rem;
   line-height: 1.5;
+  white-space: nowrap;
   @include tap-highligh-none();
   transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
   &:hover {
@@ -41,11 +42,10 @@
   display: inline-block;
   text-align: center;
   padding: .25em .5em;
-  background: linear-gradient(-45deg, rgba($color-light, 0), rgba($color-light, .3));
   border: 1px solid rgba($color-light, .3);
   border-radius: .25rem;
   color: $color-light;
-  box-shadow: 0 0 1rem rgba($color-light, .3);
+  white-space: nowrap;
   @include tap-highligh-none();
   transition: all .5s ease-in-out;
   &:hover {
@@ -133,13 +133,13 @@
 @mixin background-gradient($keyframe) {
   background: linear-gradient(
     -45deg,
-    lighten($color-main, 30%),
-    lighten($color-main, 15%),
-    lighten($color-accent, 30%),
-    lighten($color-accent, 15%)
+    lighten($color-main, 20%),
+    lighten($color-main, 10%),
+    lighten($color-accent, 20%),
+    lighten($color-accent, 10%)
   );
   background-size: 400% 400%;
-  animation: $keyframe 6s ease;
+  animation: $keyframe 10s ease;
   background-attachment: fixed;
   animation-fill-mode: forwards;
 }

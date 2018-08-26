@@ -5,6 +5,8 @@
       <nuxt />
     </main>
     <TheAside />
+    <div id="dummy-1" />
+    <div id="dummy-2" />
     <TheFooter />
   </div>
 </template>

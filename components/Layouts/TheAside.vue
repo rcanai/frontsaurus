@@ -9,44 +9,34 @@
           検索
         </button>
       </div>
-      <div>
-        <ul class="post-list">
+      <div class="aside-list">
+        <div class="aside-list-title">
+          最近の記事一覧
+        </div>
+        <ul class="aside-list-posts">
           <li
             v-for="post in posts"
-            :key="post.sys.id"
-            class="post-list-item">
+            :key="post.sys.id">
             <nuxt-link
               :to="`/posts/${post.sys.id}`"
-              class="post-link"
               :title="post.fields.title">
-              <div
-                v-if="post.fields.image"
-                class="post-image"
-                :style="{
-                  backgroundImage: `url(http:${post.fields.image.fields.file.url})`
-                }"
-              />
-              <div
-                v-else
-                class="post-image empty" />
-              <div class="post-detail">
-                <p class="post-title">
-                  {{ post.fields.title }}
-                </p>
-              </div>
+              <span class="post-title">
+                {{ post.fields.title }}
+              </span>
             </nuxt-link>
           </li>
         </ul>
       </div>
-      <div>
-        <ul class="category-list">
+      <div class="aside-list">
+        <div class="aside-list-title">
+          カテゴリー一覧
+        </div>
+        <ul class="aside-list-categories">
           <li
             v-for="category in categories"
-            :key="category.sys.id"
-            class="post-list-item">
+            :key="category.sys.id">
             <nuxt-link
               :to="{name: 'posts', query: {category: category.sys.id }}"
-              class="post-link"
               :title="category.fields.name">
               {{ category.fields.name }}
             </nuxt-link>
@@ -68,6 +58,7 @@ export default {
     }
   },
   methods: {
+    // 最近の記事を取得
     fetchPosts () {
       return contentfulClient.getEntries({
         content_type: 'post',
@@ -75,6 +66,7 @@ export default {
         limit: 5
       })
     },
+    // カテゴリーを取得
     fetchCategories () {
       return contentfulClient.getEntries({
         content_type: 'category',
@@ -97,16 +89,58 @@ export default {
 
 <style lang="scss">
 #aside {
+  width: 100%;
   .aside-container {
     width: 100%;
     height: 100%;
+    padding: .5rem;
   }
   .search-form {
+    display: flex;
+    flex-flow: row nowrap;
     input {
       @include input();
+      width: 100%;
     }
     button {
       @include button();
+    }
+  }
+  .aside-list {
+    border: 1px solid $color-main;
+    border-radius: .25rem;
+    margin-top: 1rem;
+    li {
+      border-top: 1px solid rgba($color-main, .3);
+      &:first-child {
+        border-top: none;
+      }
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: .5rem .25rem;
+      transition: background-color .3s ease-in-out, color .3s ease-in-out;
+      &:hover {
+        background-color: rgba($color-main, .1);
+      }
+    }
+  }
+  .aside-list-title {
+    text-align: center;
+    font-size: 1.2rem;
+    color: $color-light;
+    background-color: $color-main;
+    padding: .25rem;
+  }
+}
+
+@media screen and (min-width: $width-small) {
+  #aside {
+    .aside-list {
+      li {
+        font-size: .9rem;
+      }
     }
   }
 }
