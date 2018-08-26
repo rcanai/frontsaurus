@@ -7,8 +7,11 @@ $color-gray: mix($color-light, $color-dark);
 
 // 基本色
 $color-main: #795548;
-$color-sub: #5D4037;
-$color-accent: #4CAF50;
+$color-sub: #5d4037;
+$color-accent: #4caf50;
+
+// システム色
+$color-danger: #ff4444;
 
 // 文字色
 $color-link: $color-main;

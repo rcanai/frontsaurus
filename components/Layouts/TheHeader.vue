@@ -32,16 +32,16 @@
         @click="hideNav">
         <ul class="nav-links">
           <nuxt-link
+            to="/"
+            tag="li"
+            class="nav-link">
+            <a>Home</a>
+          </nuxt-link>
+          <nuxt-link
             to="/posts"
             tag="li"
             class="nav-link">
             <a>Blog</a>
-          </nuxt-link>
-          <nuxt-link
-            to="/search"
-            tag="li"
-            class="nav-link">
-            <a>Search</a>
           </nuxt-link>
           <nuxt-link
             to="/about"
@@ -132,7 +132,7 @@ export default {
   }
   .site-title {
     position: relative;
-    width: auto;
+    max-width: calc(100% - 4rem); // - (nav-toggle-label: width + 1rem)
     white-space: nowrap;
     height: 100%;
     display: flex;
@@ -142,7 +142,7 @@ export default {
     color: $color-light;
     span {
       width: 100%;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       z-index: 1;
     }
@@ -154,7 +154,8 @@ export default {
     }
     ul {
       position: absolute;
-      right: 0;
+      right: -1rem;
+      bottom: -.5rem;
       display: flex;
       flex-flow: row nowrap;
       li {
@@ -169,8 +170,9 @@ export default {
   }
   .nav-toggle-label {
     display: inline-block;
-    margin-left: 1em;
+    width: 3rem;
     height: 3rem;
+    margin-left: 1em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -202,7 +204,7 @@ export default {
       list-style: none;
       display: flex;
       flex-flow: row wrap;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-around;
       li {
         width: 40%;
@@ -211,6 +213,7 @@ export default {
       a {
         @include button-light();
         width: 100%;
+        padding: 1rem 0;
       }
     }
   }
@@ -260,6 +263,7 @@ export default {
         }
         a {
           width: 6rem;
+          padding: 0;
           &:hover {
             box-shadow: 0 0 3rem rgba($color-light, .7);
           }
@@ -268,7 +272,20 @@ export default {
     }
   }
 }
-
+@media screen and (min-width: $width-small) {
+  #header {
+    .site-title {
+      span {
+        font-size: 2rem;
+        letter-spacing: .25rem;
+      }
+      ul {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
 @media screen and (min-width: $width-large) {
   #header {
     padding: 0 $side-space;

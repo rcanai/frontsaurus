@@ -50,10 +50,8 @@ export default {
 #page-error {
   height: 100%;
   .error-title {
-    color: $color-accent;
+    color: $color-danger;
     text-align: center;
-    border: 1px solid rgba($color-main, .7);
-    border-radius: .5rem;
     padding: 1rem;
   }
   .escape-actions {
@@ -65,8 +63,9 @@ export default {
     justify-content: space-around;
     padding-top: 10vh;
     a {
-      @include button();
-      font-size: 2rem;
+      @include button-outline();
+      font-size: 1.8rem;
+      font-weight: bold;
     }
   }
 }

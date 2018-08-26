@@ -143,8 +143,8 @@ export default {
     justify-content: flex-start;
     margin-top: .5rem;
     .post-category {
-      color: $color-gray;
-      border: 1px solid rgba($color-gray, .3);
+      color: $color-dark;
+      border: 1px solid rgba($color-main, .3);
       border-radius: .25rem;
       padding: .25rem .5rem;
     }

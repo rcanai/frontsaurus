@@ -66,7 +66,7 @@ export default {
       return contentfulClient.getEntries({
         content_type: 'post',
         order: '-fields.publishedAt',
-        limit: 5
+        limit: 10
       })
     },
     // カテゴリーを取得
@@ -74,7 +74,7 @@ export default {
       return contentfulClient.getEntries({
         content_type: 'category',
         order: 'fields.name',
-        limit: 10
+        limit: 15
       })
     },
     // 検索
@@ -120,7 +120,7 @@ export default {
   .aside-list {
     border: 1px solid $color-main;
     border-radius: .25rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     li {
       border-top: 1px solid rgba($color-main, .3);
       &:first-child {

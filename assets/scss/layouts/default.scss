@@ -8,7 +8,6 @@
     "header header"
     "main main"
     "aside aside"
-    "dummy1 dummy2"
     "footer footer";
 
   /* グリッドの設定 */
@@ -20,12 +19,6 @@
   }
   #aside {
     grid-area: aside;
-  }
-  #dummy-1 {
-    grid-area: dummy1;
-  }
-  #dummy-2 {
-    grid-area: dummy2;
   }
   #footer {
     grid-area: footer;
@@ -89,17 +82,17 @@
 
 @media screen and (min-width: $width-large) {
   #layout-default {
-    grid-template-columns: $side-space 3fr 1fr $side-space;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-      "header header header header"
-      "dummy1 main aside dummy2"
-      "footer footer footer footer";
+      "header header"
+      "main main aside"
+      "footer footer";
   }
 
-  #dummy-1 {
-    grid-area: dummy1;
+  #main {
+    padding-left: $side-space;
   }
-  #dummy-2 {
-    grid-area: dummy2;
+  #aside {
+    padding-right: $side-space;
   }
 }

@@ -95,18 +95,18 @@ export default {
   top: 0px;
   left: 0;
   right: 0px;
-  height: .25rem;
+  height: .5rem;
   width: 0%;
-  transition: width 0.3s, opacity 0.4s;
-  opacity: 1;
-  background-color: rgba($color-main, .8);
+  transition: width .5s, opacity .7s;
+  opacity: .9;
+  background-color: rgba($color-accent, .7);
   z-index: 999999;
   opacity: 0;
   &.show {
     opacity: 1;
   }
   &.failed {
-    background-color: rgba($color-accent, .8);
+    background-color: rgba($color-danger, .7);
   }
 }
 </style>

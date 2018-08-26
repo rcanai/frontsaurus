@@ -44,6 +44,24 @@
   }
 }
 
+@mixin button-outline() {
+  display: inline-block;
+  width: auto;
+  font-size: 1rem;
+  text-align: center;
+  padding: .25rem .5rem;
+  color: $color-main;
+  border: 1px solid $color-main;
+  border-radius: .25rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  &:hover {
+    background-color: $color-main;
+    color: $color-light;
+  }
+}
+
 @mixin button-light() {
   display: inline-block;
   text-align: center;
@@ -79,7 +97,7 @@
   }
   p {
     padding: .25rem;
-    line-height: 1.5em;
+    line-height: 1;
   }
   a {
     text-decoration: underline;
