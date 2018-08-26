@@ -101,6 +101,7 @@ export default {
 <style lang="scss">
 #aside {
   width: 100%;
+  padding-bottom: 2rem;
   .aside-container {
     width: 100%;
     height: 100%;

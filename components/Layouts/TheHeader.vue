@@ -284,6 +284,13 @@ export default {
         bottom: 0;
       }
     }
+    .header-nav {
+      ul {
+        a {
+          padding: .25rem 0;
+        }
+      }
+    }
   }
 }
 @media screen and (min-width: $width-large) {
