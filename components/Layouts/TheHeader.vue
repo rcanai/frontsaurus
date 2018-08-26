@@ -7,7 +7,16 @@
         to="/"
         class="site-title">
         <span>{{ headerTitle }}</span>
-        <small>Front saurus</small>
+        <small>- WEB開発に役立つ情報を発信 -</small>
+        <ul>
+          <li
+            v-for="i in 4"
+            :key="i">
+            <img
+              src="/images/footstep.svg"
+              alt="footstep">
+          </li>
+        </ul>
       </nuxt-link>
       <input
         type="checkbox"
@@ -97,17 +106,15 @@ export default {
   height: auto;
   overflow: hidden;
   padding-bottom: 1rem;
-  @include background-gradient(Gradient-header);
+  background-color: $color-main;
 
   // wave
-  &::before, &::after {
+  &::before {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  &::before {
     height: 1rem;
     background-size: 1rem 2rem;
     background-image: radial-gradient(circle at .5rem -1rem, transparent 1rem, $color-light 1.6rem);
@@ -137,12 +144,27 @@ export default {
       width: 100%;
       font-size: 2rem;
       font-weight: bold;
+      z-index: 1;
     }
     small {
       width: 100%;
-      font-size: 1rem;
-      text-align: center;
       margin-bottom: auto;
+      padding-left: 2rem;
+      z-index: 1;
+    }
+    ul {
+      position: absolute;
+      right: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      li {
+        width: 3rem;
+        height: auto;
+        margin-left: 1rem;
+        &:nth-child(even) {
+          margin-top: -2rem;
+        }
+      }
     }
   }
   .nav-toggle-label {

@@ -6,6 +6,17 @@
       <header class="page-header">
         <h1 class="page-title">お問い合わせ</h1>
       </header>
+      <p class="letter">
+        申し訳ございません。<br>
+        現在、お問い合わせをGoogleフォームのみからと<br>
+        させていただいております。<br>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdJpo9QjM3h0D9UXFi1SzVDwQafmkrkFAf-zPEUpel2drHEiA/viewform?usp=sf_link"
+          target="_blank">
+          こちらのリンク
+        </a>
+        から送信をお願いいたします。
+      </p>
       <div
         ref="contact-form"
         class="form"
@@ -18,6 +29,7 @@
           <input
             type="text"
             id="contact-form-name"
+            disabled
             required>
         </div>
         <div class="form-item">
@@ -28,6 +40,7 @@
           <input
             type="email"
             id="contact-form-email"
+            disabled
             required>
         </div>
         <div class="form-item">
@@ -38,6 +51,7 @@
           <textarea
             id="contact-form-content"
             rows="7"
+            disabled
             required />
         </div>
         <div
@@ -45,7 +59,8 @@
           style="text-align:center;">
           <button
             type="button"
-            @click.stop="send">現在送信できません</button>
+            disabled
+            @click.stop="send">送信する</button>
         </div>
       </div>
     </section>
@@ -70,6 +85,16 @@ export default {
 
 <style lang="scss">
 #page-contact {
+  .letter {
+    text-align: center;
+    background-color: rgba($color-main, .1);
+    padding: 3rem;
+    a {
+      text-decoration: underline;
+      font-weight: bold;
+      color: $color-main;
+    }
+  }
   .form {
     padding: 1rem;
     width: 80%;

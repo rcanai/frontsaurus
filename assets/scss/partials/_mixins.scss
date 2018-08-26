@@ -16,6 +16,9 @@
   &:focus {
     box-shadow: 0 0 0 .1rem rgba($color-main, .3);
   }
+  &:disabled {
+    background-color: rgba($color-dark, .1);
+  }
 }
 
 @mixin button() {
@@ -35,6 +38,9 @@
   &:hover {
     background-color: darken($color-main, 10%);
     border-color: darken($color-main, 10%);
+  }
+  &:disabled {
+    text-decoration: line-through;
   }
 }
 

@@ -114,7 +114,7 @@ export default {
         { property: 'og:url', content: `${constants.url}/posts/${this.post.sys.id}` },
         { property: 'og:title', content: this.post.fields.title },
         { property: 'og:description', content: '' },
-        { property: 'og:image', content: `${constants.url}/twitter_card.png` }
+        { property: 'og:image', content: `${constants.url}/images/twitter_card.png` }
       ]
     }
   }

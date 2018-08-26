@@ -6,22 +6,25 @@
       <header class="page-header">
         <h1 class="page-title">アバウト</h1>
       </header>
-      <section>
+      <section class="child-section">
         <header>
           <h2>このサイトについて</h2>
         </header>
         <p>
-          このサイトは、フロントエンドの技術を中心に発信するブログサイトです。
+          このサイトは、WEB開発に役立つ<br>
+          フロントエンドの技術を中心に発信するブログサイトです。
         </p>
       </section>
-      <section>
+      <section
+        class="child-section"
+        style="margin-top:3rem;">
         <header>
           <h2>プロフィール</h2>
         </header>
         <div class="profile">
           <div class="avatar-wrapper">
             <img
-              src="/avatar.png"
+              src="/images/avatar.png"
               alt="avatar">
           </div>
           <div>
@@ -88,10 +91,20 @@ export default {
 
 <style lang="scss">
 #page-about {
-  .site-dscription {
-    text-align: center;
-    font-size: 1.25rem;
-    word-break: break-all;
+  .child-section {
+    > header {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      h2 {
+        color: $color-main;
+        border-bottom: 1px solid rgba($color-main, .7);
+      }
+    }
+    > p {
+      text-align: center;
+      padding-top: 1rem;
+    }
   }
   .profile {
     display: flex;
@@ -100,7 +113,7 @@ export default {
     justify-content: space-around;
     max-width: 30rem;
     margin: 0 auto;
-    padding-top: 4rem;
+    padding-top: 1rem;
   }
   .avatar-wrapper {
     width: 10rem;

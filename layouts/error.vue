@@ -3,8 +3,8 @@
     id="page-error"
     class="page-container">
     <section>
-      <header class="page-header">
-        <h1 class="page-title">
+      <header class="error-header">
+        <h1 class="error-title">
           <span>{{ statusCode }}</span>
           <span>.&nbsp;</span>
           <span>{{ message }}</span>
@@ -42,10 +42,9 @@ export default {
 </script>
 <style lang="scss">
 #page-error {
-  min-height: 80vh;
-  .page-title {
-    margin-top: 5rem;
+  .error-title {
     color: $color-accent;
+    text-align: center;
   }
 }
 </style>

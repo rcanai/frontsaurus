@@ -46,6 +46,14 @@ button {
   font-size: 100%;
 }
 
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+  cursor: not-allowed;
+}
+
 html {
   box-sizing: border-box;
 }
