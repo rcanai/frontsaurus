@@ -34,7 +34,7 @@
                   {{ post.fields.title }}
                 </h2>
                 <div
-                  class="post-content"
+                  class="post-brief"
                   v-html="post.fields.briefContent" />
               </div>
               <ul
@@ -197,7 +197,7 @@ export default {
     color: $color-gray;
     font-size: .9rem;
   }
-  .post-content {
+  .post-brief {
     color: $color-dark;
   }
   .post-image {
@@ -205,6 +205,8 @@ export default {
     width: 8rem;
     height: 8rem;
     border-radius: .25rem;
+    overflow: hidden;
+    background-size: cover;
     background-color: transparent;
     background-size:  cover;
     background-position: center;
@@ -216,7 +218,7 @@ export default {
       background: lighten($color-main, 15%);
       background: linear-gradient(225deg, lighten($color-main, 15%) 0%, lighten($color-main, 30%) 100%);
       &::after {
-        content: "rcanai website";
+        content: "IMAGE";
         color: $color-light;
         word-break: break-all;
       }
