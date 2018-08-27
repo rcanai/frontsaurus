@@ -12,3 +12,9 @@ dist
 
 # IDE
 .idea
+
+# env
+.env
+
+# vscode
+.vscode
