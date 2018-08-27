@@ -81,14 +81,14 @@
 @mixin article-typography() {
   h1, h2 {
     font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 1.8rem;
+    margin-bottom: .9rem;
     border-bottom: 1px solid rgba($color-dark, .5);
   }
   h3 {
     font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-top: 1.6rem;
+    margin-bottom: .8rem;
   }
   h4 {
     font-weight: bold;
@@ -97,10 +97,11 @@
   }
   p {
     padding: .25rem;
-    line-height: 1;
+    line-height: 1.8;
   }
   a {
     text-decoration: underline;
+    color: $color-main;
   }
   ul {
     list-style: circle;
@@ -110,7 +111,7 @@
   }
   ul, ol {
     padding-left: 1.5rem;
-    line-height: 1em;
+    line-height: 1.8;
   }
   img {
     max-width: 100%;

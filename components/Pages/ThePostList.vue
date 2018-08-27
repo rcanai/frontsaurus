@@ -87,7 +87,7 @@ export default {
 <style lang="scss" scoped>
 .post-list {
   .post-list-item {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 .post-title {
@@ -95,13 +95,15 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 1.25rem;
-  color: $color-light;
-  background-color: rgba($color-main, .9);
+  font-weight: bold;
+  color: $color-dark;
+  border: 1px solid rgba($color-main, .9);
   border-radius: .25rem;
   padding: .5rem;
-  transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
   &:hover {
-    background-color: rgba($color-sub, .9);
+    background-color: rgba($color-main, .1);
+    color: $color-main;
   }
 }
 .post-detail {
@@ -117,6 +119,7 @@ export default {
   color: $color-gray;
   white-space: nowrap;
   margin-bottom: .25rem;
+  padding: .25rem .5rem;
 }
 .post-categories {
   width: 100%;
@@ -126,8 +129,8 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   .post-category {
-    color: $color-dark;
-    border: 1px solid rgba($color-main, .3);
+    color: $color-light;
+    background-color: rgba($color-dark, .3);
     border-radius: .25rem;
     padding: .25rem .5rem;
     font-size: .9rem;

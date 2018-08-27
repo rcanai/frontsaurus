@@ -125,17 +125,19 @@ export default {
 #pages-posts-id {
   .post-header {
     width: 100%;
-    border: .1rem solid rgba($color-main, .3);
-    border-radius: .5rem;
-    padding: .5rem;
+    padding: 1rem .25rem;
     margin-bottom: 1rem;
+    background-color: rgba($color-main, .1);
+    border-radius: .25rem;
   }
   .post-title {
     font-weight: bold;
+    font-size: 1.8rem; // 通常のH1よりも少し小さく
     padding-top: .5rem;
   }
   .post-datetime {
     color: $color-gray;
+    white-space: nowrap;
   }
   .post-categories {
     display: flex;
@@ -143,8 +145,8 @@ export default {
     justify-content: flex-start;
     margin-top: .5rem;
     .post-category {
-      color: $color-dark;
-      border: 1px solid rgba($color-main, .3);
+      color: $color-light;
+      background-color: rgba($color-dark, .3);
       border-radius: .25rem;
       padding: .25rem .5rem;
     }

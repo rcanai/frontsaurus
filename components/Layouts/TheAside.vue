@@ -105,7 +105,7 @@ export default {
   .aside-container {
     width: 100%;
     height: 100%;
-    padding: .5rem;
+    padding: .25rem;
   }
   .search-form {
     display: flex;
@@ -149,6 +149,9 @@ export default {
 
 @media screen and (min-width: $width-small) {
   #aside {
+    .aside-container {
+      padding: .5rem;
+    }
     .aside-list {
       li {
         font-size: .9rem;

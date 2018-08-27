@@ -74,7 +74,6 @@ export default {
 <style lang="scss">
 .markdown-content {
   word-wrap: break-word;
-  white-space: pre-wrap;
 
   /* Monokai style - ported by Luigi Maselli - http://grigio.org */
   .hljs {

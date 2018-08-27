@@ -29,7 +29,7 @@
     .main-container {
       width: 100%;
       height: 100%;
-      padding: .5rem;
+      padding: .25rem;
     }
   }
 
@@ -77,6 +77,12 @@
       "header header"
       "main aside"
       "footer footer";
+
+    #main {
+      .main-container {
+        padding: .5rem;
+      }
+    }
   }
 }
 
@@ -87,12 +93,13 @@
       "header header"
       "main main aside"
       "footer footer";
+
+    #main {
+      padding-left: $side-space;
+    }
+    #aside {
+      padding-right: $side-space;
+    }
   }
 
-  #main {
-    padding-left: $side-space;
-  }
-  #aside {
-    padding-right: $side-space;
-  }
 }
