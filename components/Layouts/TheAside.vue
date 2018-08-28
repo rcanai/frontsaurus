@@ -40,6 +40,7 @@
             <nuxt-link
               :to="{name: 'posts', query: {category: category.sys.id }}"
               :title="category.fields.name">
+              <span :style="{'color': category.fields.color}">&#9679;</span>
               {{ category.fields.name }}
             </nuxt-link>
           </li>

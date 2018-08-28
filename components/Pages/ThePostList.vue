@@ -25,7 +25,11 @@
             <li
               v-for="category in post.fields.categories"
               :key="category.sys.id"
-              class="post-category">
+              class="post-category"
+              :style="{
+                'background-color': category.fields.color
+              }
+              ">
               {{ category.fields.name }}
             </li>
           </ul>
