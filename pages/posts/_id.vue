@@ -32,8 +32,16 @@
         <nuxt-link to="/posts">戻る</nuxt-link>
       </div>
     </article>
+    <ShareButtons
+      :url="pageUrl"
+      :text="formattedPost.fields.title"
+      :tags="tags">
+      <p class="slot-share-buttons">この記事をシェアする</p>
+    </ShareButtons>
     <div class="article-aside">
-      <nuxt-link to="/posts">
+      <nuxt-link
+        to="/posts"
+        class="link-to-posts">
         &lt; 記事一覧に戻る
       </nuxt-link>
     </div>
@@ -43,11 +51,13 @@
 <script>
 import constants from '@/assets/js/constants.js'
 import contentfulClient from '@/plugins/contentfulClient.js'
+import ShareButtons from '@/components/ShareButtons'
 import Markdown from '@/components/Markdown'
 
 export default {
   layout: 'default',
   components: {
+    ShareButtons,
     Markdown
   },
   data () {
@@ -62,6 +72,12 @@ export default {
         post.fields.publishedAt = this.$moment(post.fields.publishedAt).format(constants.datetime)
       }
       return post
+    },
+    tags () {
+      return [constants.title]
+    },
+    pageUrl () {
+      return `${constants.url}/posts/${this.post.sys.id}`
     }
   },
   // サーバーサイドレンダリング(Promiseを使うパターン)
@@ -175,9 +191,22 @@ export default {
     margin-bottom: 3rem;
     padding-top: 3rem;
     border-top: .1rem solid $color-dark;
-    a {
+    .link-to-posts {
       @include button();
     }
+  }
+
+  .share-buttons {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+    border: 1px solid rgba($color-main, .3);
+    border-radius: .5rem;
+  }
+  .slot-share-buttons {
+    width:100%;
+    margin-bottom:2rem;
+    font-weight: bold;
   }
 }
 </style>
