@@ -146,7 +146,6 @@ export default {
   .post-header {
     width: 100%;
     padding: 1rem .25rem;
-    margin-bottom: 1rem;
     background-color: rgba($color-main, .1);
     border-radius: .25rem;
   }
@@ -201,7 +200,6 @@ export default {
   }
 
   .share-buttons {
-    margin-top: 3rem;
     text-align: center;
     padding: 2rem 0;
     border: 1px solid rgba($color-main, .3);

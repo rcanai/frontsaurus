@@ -34,6 +34,11 @@
             </li>
           </ul>
           <div
+            v-else
+            class="post-categories">
+            &nbsp;
+          </div>
+          <div
             v-if="post.fields.image"
             class="post-image"
             :style="{
@@ -142,13 +147,13 @@ export default {
   }
 }
 .post-image {
+  min-width: 5rem;
   width: 5rem;
   height: 5rem;
   border-radius: .25rem;
   overflow: hidden;
-  background-size: cover;
   background-color: transparent;
-  background-size:  cover;
+  background-size:  contain;
   background-position: center;
   background-repeat:  no-repeat;
   &.empty {
@@ -167,7 +172,7 @@ export default {
 .post-brief {
   width: calc(100% - 5rem); // - .post-image: width
   height: 100%;
-  color: rgba($color-dark, .9);
+  color: rgba($color-dark, .7);
   padding-left: 1rem;
 }
 .read-continuation {
@@ -196,11 +201,12 @@ export default {
     justify-content: flex-end;
   }
   .post-image {
-    width: 8rem;
-    height: 8rem;
+    min-width: 9rem;
+    width: 9rem;
+    height: 9rem;
   }
   .post-brief {
-    width: calc(100% - 8rem); // - .post-image: width
+    width: calc(100% - 9rem); // - .post-image: width
   }
 }
 </style>
