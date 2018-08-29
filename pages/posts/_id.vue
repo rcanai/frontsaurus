@@ -195,7 +195,7 @@ export default {
   .markdown-outline {
     border: 1px solid rgba($color-main, .3);
     border-radius: .25rem;
-    padding: .25rem;
+    padding: 1rem .25rem;
     margin-bottom: 1rem;
     a {
       text-decoration: none;
