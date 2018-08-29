@@ -28,6 +28,7 @@
       <Markdown
         class="post-content"
         v-if="formattedPost.fields.content"
+        prefix="post"
         :text="formattedPost.fields.content" />
       <div
         v-else
@@ -185,6 +186,25 @@ export default {
     }
   }
 
+  // 目次
+  .markdown-outline-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  .markdown-outline {
+    border: 1px solid rgba($color-main, .3);
+    border-radius: .25rem;
+    padding: .25rem;
+    margin-bottom: 1rem;
+    a {
+      text-decoration: none;
+    }
+  }
+  .markdown-html {
+    margin-top: 3rem;
+  }
+
   // 記事一覧に戻る
   .article-aside {
     display: flex;
@@ -204,6 +224,7 @@ export default {
     padding: 2rem 0;
     border: 1px solid rgba($color-main, .3);
     border-radius: .5rem;
+    margin-top: 3rem;
   }
   .slot-share-buttons {
     width:100%;
