@@ -169,6 +169,7 @@ export default {
       background-color: rgba($color-dark, .3);
       border-radius: .25rem;
       padding: .25rem .5rem;
+      margin-right: .25rem;
     }
   }
   .post-content {

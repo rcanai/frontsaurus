@@ -144,6 +144,7 @@ export default {
     padding: .25rem .5rem;
     font-size: .9rem;
     margin-bottom: .25rem;
+    margin-right: .25rem;
   }
 }
 .post-image {
