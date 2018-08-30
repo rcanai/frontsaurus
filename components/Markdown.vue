@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style lang="scss">
-.markdown-content {
+.markdown-html {
   word-wrap: break-word;
 
   /* Monokai style - ported by Luigi Maselli - http://grigio.org */
