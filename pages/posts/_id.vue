@@ -156,7 +156,7 @@ export default {
     padding-top: .5rem;
   }
   .post-datetime {
-    color: $color-gray;
+    color: rgba($color-dark, .7);
     white-space: nowrap;
   }
   .post-categories {

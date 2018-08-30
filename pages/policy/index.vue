@@ -66,7 +66,7 @@ export default {
 #page-policy {
   h2 {
     margin-top: 1rem;
-    border-bottom: 1px solid $color-gray;
+    border-bottom: 1px solid rgba($color-dark, .7);
   }
   p {
     padding: 1rem;

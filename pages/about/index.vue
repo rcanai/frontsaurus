@@ -151,7 +151,7 @@ export default {
     max-width: 600px;
     margin: 2rem auto 2rem auto;
     padding: 1rem;
-    border: 1px solid rgba($color-gray, .5);
+    border: 1px solid rgba($color-dark, .7);
     border-radius: .5rem;
     h2 {
       color: $color-main;

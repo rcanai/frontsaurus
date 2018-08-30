@@ -2,21 +2,18 @@
 
 > フロントエンドの技術を中心に発信するブログサイト
 
-## Build Setup
+## 起動方法
 
-``` bash
-# install dependencies
-$ yarn install
+開発環境
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+```
+yarn run dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+本番環境
+
+```
+yarn run build
+pm2 start npm --name "nuxt" -- start
+pm2 stop nuxt
+```

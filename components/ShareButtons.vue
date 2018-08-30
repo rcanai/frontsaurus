@@ -5,28 +5,28 @@
       :href="`https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${formattedTags}`"
       target="_blank"
       class="share-button share-button-twitter"
-      rel="nofollow">
+      rel="nofollow noopener noreferrer">
       Twitter
     </a>
     <a
       :href="`https://www.facebook.com/share.php?t=${text}&u=${url}`"
       target="_blank"
       class="share-button share-button-facebook"
-      rel="nofollow">
+      rel="nofollow noopener noreferrer">
       Facebook
     </a>
     <a
       :href="`https://getpocket.com/edit?&url=${url}`"
       target="_blank"
       class="share-button share-button-pocket"
-      rel="nofollow">
+      rel="nofollow noopener noreferrer">
       Pocket
     </a>
     <a
       :href="`https://plus.google.com/share?title=${text}&url=${url}`"
       target="_blank"
       class="share-button share-button-google"
-      rel="nofollow">
+      rel="nofollow noopener noreferrer">
       Google+
     </a>
   </div>

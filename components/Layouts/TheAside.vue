@@ -1,13 +1,21 @@
 <template>
   <aside id="aside">
     <div class="aside-container">
+      <label
+        id="aside-search-label"
+        for="aside-search-input">
+        記事を検索する
+      </label>
       <div class="search-form">
         <input
-          type="text"
+          type="search"
+          id="aside-search-input"
           v-model="searchText"
           @keyup.enter="search"
-          placeholder="検索する">
-        <button @click="search">
+          placeholder="">
+        <button
+          id="aside-search-button"
+          @click="search">
           検索
         </button>
       </div>
@@ -111,13 +119,18 @@ export default {
   .search-form {
     display: flex;
     flex-flow: row nowrap;
-    input {
-      @include input();
-      width: 100%;
-    }
-    button {
-      @include button();
-    }
+  }
+  #aside-search-label {
+    display: inline-block;
+    width: 100%;
+  }
+  #aside-search-input {
+    @include input();
+    width: 100%;
+  }
+  #aside-search-button {
+    @include button();
+    width: auto;
   }
   .aside-list {
     border: 1px solid $color-main;

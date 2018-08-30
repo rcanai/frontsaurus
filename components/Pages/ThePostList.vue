@@ -125,7 +125,7 @@ export default {
 .post-datetime {
   width: 100%;
   font-size: .9rem;
-  color: $color-gray;
+  color: rgba($color-dark, .7);
   white-space: nowrap;
   margin-bottom: .25rem;
   padding: .25rem .5rem;
@@ -139,7 +139,7 @@ export default {
   align-items: flex-start;
   .post-category {
     color: $color-light;
-    background-color: rgba($color-dark, .3);
+    background-color: $color-dark;
     border-radius: .25rem;
     padding: .25rem .5rem;
     font-size: .9rem;
