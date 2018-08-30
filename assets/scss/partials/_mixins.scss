@@ -79,6 +79,7 @@
 
 // 記事内容のスタイル
 @mixin article-typography() {
+  word-wrap: break-word;
   h1, h2 {
     font-weight: bold;
     font-size: 1.5rem;
