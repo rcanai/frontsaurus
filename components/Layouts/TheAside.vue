@@ -16,7 +16,7 @@
         <button
           id="aside-search-button"
           @click="search">
-          検索
+          &nbsp;
         </button>
       </div>
       <div class="aside-list">
@@ -126,11 +126,18 @@ export default {
   }
   #aside-search-input {
     @include input();
+    box-shadow: none !important;
+    border-radius: .25rem 0 0 .25rem;
     width: 100%;
   }
   #aside-search-button {
     @include button();
-    width: auto;
+    border-radius: 0 .25rem .25rem 0;
+    width: 2rem;
+    background-image: url("/images/search.svg");
+    background-repeat: no-repeat;
+    background-size:  1rem;
+    background-position: center;
   }
   .aside-list {
     border: 1px solid $color-main;

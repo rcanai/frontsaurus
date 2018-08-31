@@ -154,9 +154,9 @@ export default {
   border-radius: .25rem;
   overflow: hidden;
   background-color: transparent;
+  background-repeat:  no-repeat;
   background-size:  contain;
   background-position: center;
-  background-repeat:  no-repeat;
   &.empty {
     display: flex;
     align-items: center;
