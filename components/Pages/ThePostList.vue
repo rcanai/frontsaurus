@@ -1,5 +1,16 @@
 <template>
   <ul class="post-list">
+    <li v-if="posts.length === 0">
+      <div class="posts-empty">
+        該当する記事がありません。
+        <div>
+          <nuxt-link
+            to="/posts">
+            記事一覧に戻る
+          </nuxt-link>
+        </div>
+      </div>
+    </li>
     <li
       v-for="post in formattedPosts"
       :key="post.sys.id"
@@ -190,6 +201,22 @@ export default {
       background-color: $color-main;
       color: $color-light;
     }
+  }
+}
+
+.posts-empty {
+  width: 100%;
+  border: 1px solid $color-accent;
+  border-radius: .5rem;
+  padding: 5rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $color-main;
+  background-color: rgba($color-main, .1);
+  a {
+    @include button();
+    margin-top: 3rem;
+    font-weight: normal;
   }
 }
 
