@@ -120,4 +120,8 @@ export default {
 
 <style lang="scss">
 @import '~highlight.js/styles/railscasts.css';
+.hljs-comment,
+.hljs-quote {
+  font-style: normal;
+}
 </style>

@@ -16,7 +16,9 @@
         <button
           id="aside-search-button"
           @click="search">
-          &nbsp;
+          <img
+            src="/images/search.svg"
+            alt="search">
         </button>
       </div>
       <div class="aside-list">
@@ -133,11 +135,11 @@ export default {
   #aside-search-button {
     @include button();
     border-radius: 0 .25rem .25rem 0;
-    width: 2rem;
-    background-image: url("/images/search.svg");
-    background-repeat: no-repeat;
-    background-size:  1rem;
-    background-position: center;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      vertical-align: bottom;
+    }
   }
   .aside-list {
     border: 1px solid $color-main;

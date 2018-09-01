@@ -59,6 +59,12 @@ export default {
 </script>
 
 <style lang="scss">
+$color-twiter: #146A9E !default;
+$color-facebook: #3D589C !default;
+$color-pocket: #DD0E1E !default;
+$color-google: #DC2419 !default;
+$color-bright: #fafafa !default;
+
 .share-buttons {
   display: flex;
   flex-flow: row wrap;
@@ -66,40 +72,40 @@ export default {
   .share-button {
     display: inline-block;
     border-radius: .25rem;
-    color: #fafafa;
+    color: $color-bright;
     padding: 1rem .5rem;
     transition: all .5s;
   }
   .share-button-twitter {
-    border: 1px solid #22A0F2;
-    color: #22A0F2;
+    border: 1px solid $color-twiter;
+    background-color: $color-twiter;
     &:hover {
-      background-color: #22A0F2;
-      color: #fafafa;
+      background-color: $color-bright;
+      color: $color-twiter;
     }
   }
   .share-button-facebook {
-    border: 1px solid #3D589C;
-    color: #3D589C;
+    border: 1px solid $color-facebook;
+    background-color: $color-facebook;
     &:hover {
-      background-color: #3D589C;
-      color: #fafafa;
+      background-color: $color-bright;
+      color: $color-facebook;
     }
   }
   .share-button-pocket {
-    border: 1px solid #F14454;
-    color: #F14454;
+    border: 1px solid $color-pocket;
+    background-color: $color-pocket;
     &:hover {
-      background-color: #F14454;
-      color: #fafafa;
+      background-color: $color-bright;
+      color: $color-pocket;
     }
   }
   .share-button-google {
-    border: 1px solid #E94438;
-    color: #E94438;
+    border: 1px solid $color-google;
+    background-color: $color-google;
     &:hover {
-      background-color: #E94438;
-      color: #fafafa;
+      background-color: $color-bright;
+      color: $color-google;
     }
   }
 }
