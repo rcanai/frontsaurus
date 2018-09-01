@@ -1,27 +1,15 @@
 #layout-default {
   height: 100%;
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "header header"
-    "main main"
-    "aside aside"
-    "footer footer";
+  display: flex;
+  flex-flow: row wrap;
 
   /* グリッドの設定 */
-  #header {
-    grid-area: header;
-  }
   #main {
-    grid-area: main;
+    width: 100%;
   }
   #aside {
-    grid-area: aside;
-  }
-  #footer {
-    grid-area: footer;
+    width: 100%;
   }
 
   /* スタイル */
@@ -71,34 +59,26 @@
 
 @media screen and (min-width: $width-small) {
   #layout-default {
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas:
-      "header header"
-      "main aside"
-      "footer footer";
-
+    /* グリッドの設定 */
     #main {
-      .main-container {
-        padding: .5rem;
-      }
+      width: 76%;
+    }
+    #aside {
+      width: 24%;
     }
   }
 }
 
 @media screen and (min-width: $width-large) {
   #layout-default {
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas:
-      "header header"
-      "main main aside"
-      "footer footer";
-
+    /* グリッドの設定 */
     #main {
-      padding-left: $side-space;
+      width: 70%;
+      padding-left: 10vw;
     }
     #aside {
-      padding-right: $side-space;
+      width: 30%;
+      padding-right: 10vw;
     }
   }
 

@@ -82,6 +82,7 @@ $color-bright: #fafafa !default;
     &:hover {
       background-color: $color-bright;
       color: $color-twiter;
+      box-shadow: 0 0 1rem $color-twiter;
     }
   }
   .share-button-facebook {
@@ -90,6 +91,7 @@ $color-bright: #fafafa !default;
     &:hover {
       background-color: $color-bright;
       color: $color-facebook;
+      box-shadow: 0 0 1rem $color-facebook;
     }
   }
   .share-button-pocket {
@@ -98,6 +100,7 @@ $color-bright: #fafafa !default;
     &:hover {
       background-color: $color-bright;
       color: $color-pocket;
+      box-shadow: 0 0 1rem $color-pocket;
     }
   }
   .share-button-google {
@@ -106,6 +109,7 @@ $color-bright: #fafafa !default;
     &:hover {
       background-color: $color-bright;
       color: $color-google;
+      box-shadow: 0 0 1rem $color-google;
     }
   }
 }

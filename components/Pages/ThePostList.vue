@@ -49,6 +49,7 @@
             class="post-categories">
             &nbsp;
           </div>
+          <div class="post-spacer" />
           <div
             v-if="post.fields.image"
             class="post-image"
@@ -107,7 +108,7 @@ export default {
 <style lang="scss" scoped>
 .post-list {
   .post-list-item {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 }
 .post-title {
@@ -134,12 +135,13 @@ export default {
   justify-content: space-between;
 }
 .post-datetime {
+  display: inline-block;
   width: 100%;
   font-size: .9rem;
   color: rgba($color-dark, .7);
   white-space: nowrap;
-  margin-bottom: .25rem;
-  padding: .25rem .5rem;
+  display: flex;
+  align-items: center;
 }
 .post-categories {
   width: 100%;
@@ -147,15 +149,17 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   .post-category {
     color: $color-light;
     background-color: $color-dark;
     border-radius: .25rem;
     padding: .25rem .5rem;
     font-size: .9rem;
-    margin-bottom: .25rem;
     margin-right: .25rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 .post-image {
@@ -184,7 +188,7 @@ export default {
 .post-brief {
   width: calc(100% - 5rem); // - .post-image: width
   height: 100%;
-  color: rgba($color-dark, .7);
+  color: $color-dark;
   padding-left: 1rem;
 }
 .read-continuation {
@@ -202,6 +206,11 @@ export default {
       color: $color-light;
     }
   }
+}
+
+.post-spacer {
+  width: 100%;
+  height: .5rem;
 }
 
 .posts-empty {

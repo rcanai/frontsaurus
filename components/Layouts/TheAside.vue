@@ -12,7 +12,7 @@
           id="aside-search-input"
           v-model="searchText"
           @keyup.enter="search"
-          placeholder="">
+          placeholder="文字を入力">
         <button
           id="aside-search-button"
           @click="search">
@@ -125,16 +125,24 @@ export default {
   #aside-search-label {
     display: inline-block;
     width: 100%;
+    text-align: center;
+    background-color: $color-main;
+    color: $color-light;
+    font-size: 1.2rem;
+    padding: .25rem 0;
+    border-radius: .25rem .25rem 0 0;
   }
   #aside-search-input {
     @include input();
     box-shadow: none !important;
-    border-radius: .25rem 0 0 .25rem;
+    border-radius: 0 0 0 .25rem;
     width: 100%;
+    border-right: none;
   }
   #aside-search-button {
-    @include button();
-    border-radius: 0 .25rem .25rem 0;
+    @include button-outline();
+    border-radius: 0 0 .25rem 0;
+    border-left: none;
     img {
       width: 1.5rem;
       height: 1.5rem;
@@ -166,7 +174,7 @@ export default {
     font-size: 1.2rem;
     color: $color-light;
     background-color: $color-main;
-    padding: .25rem;
+    padding: .25rem 0;
   }
 }
 
