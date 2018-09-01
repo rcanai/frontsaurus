@@ -4,9 +4,11 @@
     class="main-container">
     <ThePostList
       :posts="posts"/>
-    <div class="more-posts">
+    <div
+      v-if="showmMorePosts"
+      class="more-posts">
       <nuxt-link
-        to="/posts">
+        :to="{name: 'posts', query: {page: 2}}">
         過去の記事を見る
       </nuxt-link>
     </div>
@@ -14,6 +16,7 @@
 </template>
 
 <script>
+import constants from '@/assets/js/constants.js'
 import contentfulClient from '@/plugins/contentfulClient.js'
 import ThePostList from '@/components/Pages/ThePostList'
 
@@ -27,13 +30,18 @@ export default {
       posts: []
     }
   },
+  computed: {
+    showmMorePosts () {
+      return this.posts.length > constants.onePagePosts
+    }
+  },
   // サーバーサイドレンダリング(Promiseを使うパターン)
   // この中ではthisでmethodsを参照できないため孤立して実装
   asyncData () {
     const fetchParams = {
       content_type: 'post',
       order: '-fields.publishedAt',
-      limit: 5
+      limit: constants.onePagePosts
     }
     return contentfulClient.getEntries(fetchParams).then((res) => {
       return {
