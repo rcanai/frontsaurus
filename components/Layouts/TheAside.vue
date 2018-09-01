@@ -138,11 +138,16 @@ export default {
     border-radius: 0 0 0 .25rem;
     width: 100%;
     border-right: none;
+    background-color: $color-white;
   }
   #aside-search-button {
     @include button-outline();
     border-radius: 0 0 .25rem 0;
     border-left: none;
+    background-color: $color-white;
+    &:hover {
+      background-color: $color-white;
+    }
     img {
       width: 1.5rem;
       height: 1.5rem;
