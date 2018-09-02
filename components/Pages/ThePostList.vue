@@ -179,7 +179,7 @@ export default {
     background: lighten($color-main, 15%);
     background: linear-gradient(225deg, lighten($color-main, 15%) 0%, lighten($color-main, 30%) 100%);
     &::after {
-      content: "IMAGE";
+      content: "NO IMAGE";
       color: $color-light;
       word-break: break-all;
     }
