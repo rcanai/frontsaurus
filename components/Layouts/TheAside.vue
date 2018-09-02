@@ -150,8 +150,8 @@ export default {
     }
     img {
       width: 1.5rem;
-      height: 1.5rem;
-      vertical-align: bottom;
+      height: auto;
+      vertical-align: middle;
     }
   }
   .aside-list {
