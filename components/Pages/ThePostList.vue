@@ -163,14 +163,13 @@ export default {
   }
 }
 .post-image {
-  min-width: 5rem;
-  width: 5rem;
-  height: 5rem;
+  flex-basis: 30%;
+  height: 10rem;
   border-radius: .25rem;
   overflow: hidden;
   background-color: transparent;
-  background-repeat:  no-repeat;
-  background-size:  contain;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
   &.empty {
     display: flex;
@@ -186,8 +185,7 @@ export default {
   }
 }
 .post-brief {
-  width: calc(100% - 5rem); // - .post-image: width
-  height: 100%;
+  flex-basis: 70%;
   color: $color-dark;
   padding-left: 1rem;
 }
@@ -236,14 +234,6 @@ export default {
   .post-categories {
     width: 50%;
     justify-content: flex-end;
-  }
-  .post-image {
-    min-width: 9rem;
-    width: 9rem;
-    height: 9rem;
-  }
-  .post-brief {
-    width: calc(100% - 9rem); // - .post-image: width
   }
 }
 </style>

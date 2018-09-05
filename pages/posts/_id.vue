@@ -194,7 +194,7 @@ export default {
     margin-top: 2rem;
   }
   .markdown-outline {
-    border: 1px solid rgba($color-main, .3);
+    border: 2px solid rgba($color-main, .3);
     border-radius: .25rem;
     padding: 1rem .25rem;
     margin-bottom: 1rem;
@@ -226,13 +226,13 @@ export default {
   .share-buttons {
     text-align: center;
     padding: 2rem 0;
-    border: 1px solid rgba($color-main, .3);
+    border: 2px solid rgba($color-main, .3);
     border-radius: .5rem;
     margin-top: 3rem;
   }
   .slot-share-buttons {
-    width:100%;
-    margin-bottom:2rem;
+    width: 100%;
+    margin-bottom: 2rem;
     font-weight: bold;
   }
 }

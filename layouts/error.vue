@@ -10,11 +10,11 @@
       </header>
     </section>
     <div class="escape-actions">
-      <nuxt-link to="/">
-        ホームに戻る
-      </nuxt-link>
       <nuxt-link to="/posts">
         記事一覧に戻る
+      </nuxt-link>
+      <nuxt-link to="/contact">
+        お問い合わせ
       </nuxt-link>
     </div>
   </div>
@@ -48,24 +48,22 @@ export default {
 </script>
 <style lang="scss">
 #page-error {
-  height: 100%;
   .error-title {
     color: $color-danger;
     text-align: center;
     padding: 1rem;
   }
   .escape-actions {
-    height: 100%;
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
+    flex-flow: row wrap;
+    align-items: center;
     justify-content: space-around;
-    padding-top: 10vh;
+    padding: 10% 0;
     a {
-      @include button-outline();
-      font-size: 1.8rem;
-      font-weight: bold;
+      @include button();
+      font-size: 1.5rem;
+      margin-bottom: 10%;
     }
   }
 }

@@ -27,12 +27,13 @@ export default {
   },
   data () {
     return {
-      posts: []
+      posts: [],
+      postsTotal: 0
     }
   },
   computed: {
     showmMorePosts () {
-      return this.posts.length > constants.onePagePosts
+      return this.postsTotal > constants.onePagePosts
     }
   },
   // サーバーサイドレンダリング(Promiseを使うパターン)
@@ -45,7 +46,8 @@ export default {
     }
     return contentfulClient.getEntries(fetchParams).then((res) => {
       return {
-        posts: res.items
+        posts: res.items,
+        postsTotal: res.total
       }
     })
   },
