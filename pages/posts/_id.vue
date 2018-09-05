@@ -200,6 +200,9 @@ export default {
     margin-bottom: 1rem;
     a {
       text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .markdown-html {

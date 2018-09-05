@@ -70,7 +70,7 @@
   display: inline-block;
   text-align: center;
   padding: .25em .5em;
-  border: 1px solid rgba($color-light, .3);
+  border: 1px solid rgba($color-light, .7);
   border-radius: .25rem;
   color: $color-light;
   white-space: nowrap;
@@ -90,7 +90,7 @@
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     padding: .5rem;
-    background-color: rgba($color-main, .1);
+    background-color: rgba($color-sub, .1);
     border-radius: .25rem;
   }
   h3 {
@@ -99,7 +99,7 @@
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
     padding: .5rem;
-    border-bottom: .1rem solid rgba($color-main, .3);
+    border-bottom: .1rem solid rgba($color-sub, .3);
   }
   h4 {
     font-weight: bold;
@@ -114,12 +114,11 @@
   }
   h1, h2, h3, h4, h5, h6 {
     a {
-      color: $color-main;
       text-decoration: none;
     }
   }
   a {
-    color: $color-main;
+    color: $color-link;
     text-decoration: underline;
   }
   p {

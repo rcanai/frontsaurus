@@ -1,7 +1,7 @@
 <template>
   <div class="markdown-component">
     <div class="markdown-outline-title">{{ outlineTitle }}</div>
-    <ul
+    <ol
       v-if="outline.length > 0"
       class="markdown-outline">
       <li
@@ -13,7 +13,7 @@
           {{ ol.text }}
         </a>
       </li>
-    </ul>
+    </ol>
     <div
       ref="markdown-html"
       class="markdown-html"

@@ -1,26 +1,22 @@
 // 白・黒・グレー
 $color-light: #fefefe;
 $color-white: #ffffff;
-$color-dark: #333333;
+$color-dark: #252525;
 $color-black: #000000;
 
-// 基本色
-$color-main: #795548;
-$color-sub: #5d4037;
-$color-accent: #4caf50;
-
-// システム色
+// 色
+$color-main: #009688;
+$color-sub: #00897B;
+$color-accent: #FFC107;
+$color-link: $color-main;
 $color-danger: #ff4444;
 
-// 文字色
-$color-link: $color-main;
-
 // レスポンシブ
-$width-small: 750px; // スマホ境界線
-$width-large: 1280px; // PCなど
+$width-small: 960px; // 小さい画面の境界線
+$width-large: 1280px; // 大きい画面の境界線
 
 // 余白
-$side-space: 10vw;
+$side-space: 15vw;
 
 // フォントファミリー
 $font-family: -apple-system, BlinkMacSystemFont, Verdana, Roboto, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", sans-serif;

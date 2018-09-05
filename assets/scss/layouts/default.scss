@@ -72,14 +72,16 @@
 @media screen and (min-width: $width-large) {
   #layout-default {
     /* グリッドの設定 */
+    #header {
+      padding: 0 $side-space;
+    }
     #main {
       width: 70%;
-      padding-left: 10vw;
+      padding-left: $side-space;
     }
     #aside {
       width: 30%;
-      padding-right: 10vw;
+      padding-right: $side-space;
     }
   }
-
 }

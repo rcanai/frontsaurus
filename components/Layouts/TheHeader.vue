@@ -134,7 +134,6 @@ export default {
     position: relative;
     max-width: calc(100% - 4rem); // - (nav-toggle-label: width + 1rem)
     white-space: nowrap;
-    height: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: flex-end;
@@ -171,8 +170,7 @@ export default {
   .nav-toggle-label {
     display: inline-block;
     width: 3rem;
-    height: 3rem;
-    margin-left: 1em;
+    height: 4rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -180,9 +178,8 @@ export default {
     span, span::before, span::after {
       display: block;
       background: $color-light;
-      height: 2px;
-      width: 2em;
-      border-radius: 2px;
+      height: .25rem;
+      width: 2rem;
       position: relative;
     }
     span::before, span::after {
@@ -190,10 +187,10 @@ export default {
       position: absolute;
     }
     span::before {
-      bottom: .5rem;
+      bottom: .75rem;
     }
     span::after {
-      top: .5rem;
+      top: .75rem;
     }
   }
   .header-nav {
@@ -275,6 +272,7 @@ export default {
 @media screen and (min-width: $width-small) {
   #header {
     .site-title {
+      height: 100%;
       span {
         font-size: 2rem;
         letter-spacing: .25rem;
@@ -291,11 +289,6 @@ export default {
         }
       }
     }
-  }
-}
-@media screen and (min-width: $width-large) {
-  #header {
-    padding: 0 $side-space;
   }
 }
 </style>
