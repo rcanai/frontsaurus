@@ -126,7 +126,7 @@ export default {
     display: inline-block;
     width: 100%;
     text-align: center;
-    background-color: $color-main;
+    background-color: $color-sub;
     color: $color-light;
     font-size: 1.2rem;
     padding: .25rem 0;
@@ -155,11 +155,11 @@ export default {
     }
   }
   .aside-list {
-    border: 1px solid $color-main;
+    border: 1px solid $color-sub;
     border-radius: .25rem;
     margin-top: 2rem;
     li {
-      border-top: 1px solid rgba($color-main, .3);
+      border-top: 1px solid rgba($color-sub, .3);
       &:first-child {
         border-top: none;
       }
@@ -170,7 +170,7 @@ export default {
       padding: .5rem .25rem;
       transition: background-color .3s ease-in-out, color .3s ease-in-out;
       &:hover {
-        background-color: rgba($color-main, .1);
+        background-color: rgba($color-sub, .1);
       }
     }
   }
@@ -178,7 +178,7 @@ export default {
     text-align: center;
     font-size: 1.2rem;
     color: $color-light;
-    background-color: $color-main;
+    background-color: $color-sub;
     padding: .25rem 0;
   }
 }

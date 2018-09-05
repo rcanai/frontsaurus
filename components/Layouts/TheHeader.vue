@@ -126,7 +126,6 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
-    align-items: flex-start;
     justify-content: space-between;
     padding: .5rem;
   }
