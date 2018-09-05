@@ -48,6 +48,13 @@ export default {
         posts: res.items
       }
     })
+  },
+  head () {
+    return {
+      links: [
+        {...constants.feedLink}
+      ]
+    }
   }
 }
 </script>

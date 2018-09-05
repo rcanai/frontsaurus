@@ -105,6 +105,7 @@ export default {
     if (this.posts.length >= constants.onePagePosts) {
       links.push({ rel: 'next', href: `/posts?page=${this.page + 1}` })
     }
+    links.push({...constants.feedLink})
     return {
       title: `記事一覧 | ${constants.title}`,
       link: links
