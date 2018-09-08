@@ -159,10 +159,13 @@
     line-height: 1.9;
   }
   img {
-    max-width: 100%;
+    max-width: 96%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
+    box-shadow: 0 0 1rem rgba($color-dark, .7);
+    border: 1px solid rgba($color-dark, .3);
+    border-radius: .25rem;
   }
   p {
     code {

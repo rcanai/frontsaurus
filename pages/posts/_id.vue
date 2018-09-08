@@ -192,6 +192,7 @@ export default {
     font-weight: bold;
     font-size: 1.2rem;
     margin-top: 2rem;
+    padding-left: .25rem;
   }
   .markdown-outline {
     border: 2px solid rgba($color-main, .3);
