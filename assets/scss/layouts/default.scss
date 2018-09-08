@@ -4,21 +4,19 @@
   display: flex;
   flex-flow: row wrap;
 
-  /* グリッドの設定 */
+  #header {
+    margin-bottom: 1rem;
+  }
   #main {
     width: 100%;
-  }
-  #aside {
-    width: 100%;
-  }
-
-  /* スタイル */
-  #main {
     .main-container {
       width: 100%;
       height: 100%;
-      padding: .25rem;
+      padding: .5rem .25rem;
     }
+  }
+  #aside {
+    width: 100%;
   }
 
   // ページタイトル
@@ -59,9 +57,11 @@
 
 @media screen and (min-width: $width-small) {
   #layout-default {
-    /* グリッドの設定 */
     #main {
       width: 76%;
+      .main-container {
+        padding: .5rem .25rem;
+      }
     }
     #aside {
       width: 24%;
@@ -71,7 +71,6 @@
 
 @media screen and (min-width: $width-large) {
   #layout-default {
-    /* グリッドの設定 */
     #header {
       padding: 0 $side-space;
     }

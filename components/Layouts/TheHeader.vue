@@ -203,13 +203,14 @@ export default {
       align-items: flex-end;
       justify-content: space-around;
       li {
-        width: 40%;
+        width: 80%;
         margin-bottom: 1rem;
       }
       a {
         @include button-light();
         width: 100%;
         padding: 1rem 0;
+        font-size: 1.5rem;
       }
     }
   }
@@ -236,6 +237,17 @@ export default {
 @media screen and (min-width: $width-small) {
   #header {
     height: 8rem;
+    .site-title {
+      height: 100%;
+      span {
+        font-size: 2rem;
+        letter-spacing: .25rem;
+      }
+      ul {
+        right: 10%;
+        bottom: 10%;
+      }
+    }
     .header-container {
       flex-flow: row nowrap;
     }
@@ -259,32 +271,11 @@ export default {
         }
         a {
           width: 6rem;
-          padding: 0;
+          padding: .25rem 0;
+          font-size: 1rem;
           &:hover {
             box-shadow: 0 0 3rem rgba($color-light, .7);
           }
-        }
-      }
-    }
-  }
-}
-@media screen and (min-width: $width-small) {
-  #header {
-    .site-title {
-      height: 100%;
-      span {
-        font-size: 2rem;
-        letter-spacing: .25rem;
-      }
-      ul {
-        right: 10%;
-        bottom: 10%;
-      }
-    }
-    .header-nav {
-      ul {
-        a {
-          padding: .25rem 0;
         }
       }
     }
