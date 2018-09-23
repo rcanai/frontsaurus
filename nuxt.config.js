@@ -27,7 +27,9 @@ module.exports = {
       // IE制御
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       // 電話番号リンクを抑制
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      // テーマカラー
+      { name: 'theme-color', content: constants.color }
     ],
     link: [
       // ファビコン
@@ -93,7 +95,11 @@ module.exports = {
 
     // RSSフィードを使用する
     // Doc: https://github.com/nuxt-community/feed-module
-    '@nuxtjs/feed'
+    '@nuxtjs/feed',
+
+    // PWAモジュール
+    // Doc: https://pwa.nuxtjs.org/
+    '@nuxtjs/pwa'
   ],
 
   // sass共通モジュールの設定
@@ -133,6 +139,26 @@ module.exports = {
       create: postFeed
     }
   ],
+
+  // PWA用のマニフェスト設定
+  manifest: {
+    name: constants.title,
+    lang: 'ja',
+    theme_color: constants.color,
+    background_color: constants.color,
+    icons: [
+      {
+        'src': '/icons/72.png',
+        'sizes': '72x72',
+        'type': 'image/png'
+      },
+      {
+        'src': '/images/72.png',
+        'sizes': '152x152',
+        'type': 'image/png'
+      }
+    ]
+  },
 
   /*
   ** Build configuration
