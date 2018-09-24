@@ -143,18 +143,16 @@ module.exports = {
   // PWA用のマニフェスト設定
   manifest: {
     name: constants.title,
+    short_name: constants.title,
     lang: 'ja',
     theme_color: constants.color,
     background_color: constants.color,
+    start_url: '/?launcher=true',
+    display: 'standalone',
     icons: [
       {
-        'src': '/icons/72.png',
-        'sizes': '72x72',
-        'type': 'image/png'
-      },
-      {
         'src': '/images/72.png',
-        'sizes': '152x152',
+        'sizes': '512x512',
         'type': 'image/png'
       }
     ]
