@@ -151,7 +151,22 @@ module.exports = {
     display: 'standalone',
     icons: [
       {
-        'src': '/icons/72.png',
+        'src': '/icons/64.png',
+        'sizes': '64x64',
+        'type': 'image/png'
+      },
+      {
+        'src': '/icons/128.png',
+        'sizes': '128x128',
+        'type': 'image/png'
+      },
+      {
+        'src': '/icons/256.png',
+        'sizes': '256x256',
+        'type': 'image/png'
+      },
+      {
+        'src': '/icons/512.png',
         'sizes': '512x512',
         'type': 'image/png'
       }
