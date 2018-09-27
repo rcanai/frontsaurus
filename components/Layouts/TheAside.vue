@@ -8,7 +8,7 @@
       </label>
       <div class="search-form">
         <input
-          type="search"
+          type="text"
           id="aside-search-input"
           v-model="searchText"
           @keyup.enter="search"
