@@ -180,7 +180,7 @@
       font-family: $font-family-code;
       margin-top: .5rem;
       margin-bottom: 1rem;
-      padding: .5rem;
+      padding: 1rem .5rem;
       border-radius: .25rem;
       a {
         color: inherit;
@@ -208,6 +208,18 @@
     td {
       background-color: $color-light;
       padding: .5rem;
+    }
+  }
+  blockquote {
+    position: relative;
+    font-style: italic;
+    color: rgba($color-dark, .9);
+    background-color: #EAEAEA;
+    padding: .5rem;
+    border-left: .25rem solid $color-sub;
+    margin: 0 1rem;
+    cite {
+      font-size: .9rem;
     }
   }
 }
