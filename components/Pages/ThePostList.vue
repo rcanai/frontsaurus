@@ -163,7 +163,7 @@ export default {
   }
 }
 .post-image {
-  flex-basis: 30%;
+  width: 30%;
   height: 10rem;
   border-radius: .25rem;
   overflow: hidden;
@@ -185,7 +185,7 @@ export default {
   }
 }
 .post-brief {
-  flex-basis: 70%;
+  width: 70%;
   color: $color-dark;
   padding-left: 1rem;
 }
