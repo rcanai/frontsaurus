@@ -33,6 +33,23 @@
           </div>
         </div>
       </section>
+      <section
+        class="child-section"
+        style="margin-top:3rem;">
+        <header>
+          <h2>リンク</h2>
+        </header>
+        <ul class="profile-links">
+          <li>
+            <a
+              href="https://github.com/rcanai"
+              target="_blank"
+              rel="nofollow noopener noreferrer">
+              Github (rcanai)
+            </a>
+          </li>
+        </ul>
+      </section>
       <section class="section-skill">
         <header>
           <h2>スキル</h2>
@@ -116,9 +133,8 @@ export default {
     padding-top: 1rem;
   }
   .avatar-wrapper {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
     border: 1px solid $color-main;
     display: flex;
     flex-flow: row nowrap;
@@ -145,6 +161,17 @@ export default {
       content: "-";
       position: absolute;
       right: 105%;
+    }
+  }
+  .profile-links {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    a {
+      color: $color-main;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .section-skill {
